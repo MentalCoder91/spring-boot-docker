@@ -13,4 +13,11 @@ public class DockerHelloWorld {
 		
 		return "Welcome to deployment in docker";
 	}
+
+
+    @GetMapping("/hello")
+    public String getHello() {
+
+        return "Atlast it ran";
+    }
 }
