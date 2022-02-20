@@ -33,8 +33,8 @@ pipeline {
         stage('Docker Login'){
             
             steps {
-
-                    sh "docker login -u mentalcoder1991 -p Success@1991007
+                 withCredentials([string(credentialsId: 'ID', variable: 'PASS')]) {
+                    sh "docker login -u mentalcoder1991 -p ${PASS}"
                 }
             }                
         }
