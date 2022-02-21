@@ -45,6 +45,18 @@ pipeline {
             }
         }
 
+        stage('Docker Stop Container'){
+                    steps {
+                        sh 'docker container stop dockerspringboot'
+                    }
+                }
+
+        stage('Docker Remove Container'){
+                            steps {
+                                sh 'docker container rm dockerspringboot'
+                            }
+                        }
+
         
         stage('Docker deploy'){
             steps {
