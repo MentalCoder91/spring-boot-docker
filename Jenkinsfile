@@ -44,6 +44,13 @@ pipeline {
                 sh 'docker push mentalcoder1991/docker_jenkins_springboot:${BUILD_NUMBER}'
             }
         }
+       
+        stage('Docker Stop'){
+            steps {
+               
+                sh 'docker stop dockerspringboot '
+            }
+        }
         
         stage('Docker deploy'){
             steps {
